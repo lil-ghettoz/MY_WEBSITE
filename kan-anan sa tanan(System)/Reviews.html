@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kan Anan Sa Tanan | Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">Kan Anan Sa Tanan</h1>
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+            <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+            <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+            <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+            <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div> 
+
+        <div class="sidebar-logout">
+        <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>      
+    </div>
+
+  <main class="main">
+    <div class="main-navbar">
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <div class="search">
+        <input type="text" placeholder="Search restaurant reviews...">
+        <button class="search-btn">Search</button>
+      </div>
+      <div class="profile">
+        <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+        <a class="user" href="user.html"><ion-icon name="person-outline"></ion-icon></a>
+      </div>
+    </div>
+
+    <div class="reviews-container">
+      <h2 class="main-title">Customer Reviews</h2>
+
+      <div class="review-card">
+        <img src="images/jollibee.jpg" alt="Jollibee" class="review-img">
+        <div class="review-content">
+          <h3>Jollibee</h3>
+          <div class="stars">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half-outline"></ion-icon>
+          </div>
+          <p>“Their Chicken Joy never disappoints! Crispy outside, juicy inside. Delivery was fast too 💯.”</p>
+          <p class="review-user">– <b>Maria S.</b> | Oct 10, 2025</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="images/mcdo.jpg" alt="McDonald's" class="review-img">
+        <div class="review-content">
+          <h3>McDonald’s</h3>
+          <div class="stars">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+          <p>“Fries were a bit soggy this time 😕 but burgers still hit different!”</p>
+          <p class="review-user">– <b>Kevin L.</b> | Oct 12, 2025</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="images/mang_inasal.jpeg" alt="Mang Inasal" class="review-img">
+        <div class="review-content">
+          <h3>Mang Inasal</h3>
+          <div class="stars">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+          </div>
+          <p>“Unlimited rice and smile from the crew 😋 legit best dine-in experience!”</p>
+          <p class="review-user">– <b>Alex R.</b> | Oct 15, 2025</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="images/greenwich.jpg" alt="Greenwich" class="review-img">
+        <div class="review-content">
+          <h3>Greenwich</h3>
+          <div class="stars">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </div>
+          <p>“Pizza was great but delivery took a bit long. Still worth it though 🍕.”</p>
+          <p class="review-user">– <b>Samantha D.</b> | Oct 17, 2025</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      menuToggle.setAttribute("name", sidebar.classList.contains("active") ? "close-outline" : "menu-outline");
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

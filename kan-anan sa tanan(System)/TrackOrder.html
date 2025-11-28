@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kan Anan Sa Tanan | Track Order</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">Kan Anan Sa Tanan</h1>
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+            <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+            <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+            <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+            <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div> 
+
+        <div class="sidebar-logout">
+        <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>      
+    </div>
+
+  <main class="main">
+    <div class="main-navbar">
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <div class="search">
+        <input type="text" placeholder="Search your order ID...">
+        <button class="search-btn">Track</button>
+      </div>
+      <div class="profile">
+        <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+        <a class="user" href="user.html"><ion-icon name="person-outline"></ion-icon></a>
+      </div>
+    </div>
+
+    <div class="track-container">
+      <h2 class="main-title">Order Tracking</h2>
+      <div class="track-card">
+        <div class="track-header">
+          <h3>Order #12345</h3>
+          <p>Estimated Delivery: <b>Oct 19, 2025</b></p>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-line">
+            <div class="progress-fill" style="width: 70%;"></div>
+          </div>
+          <div class="progress-steps">
+            <div class="step completed">
+              <ion-icon name="cart-outline"></ion-icon>
+              <p>Order Placed</p>
+            </div>
+            <div class="step completed">
+              <ion-icon name="restaurant-outline"></ion-icon>
+              <p>Preparing</p>
+            </div>
+            <div class="step current">
+              <ion-icon name="bicycle-outline"></ion-icon>
+              <p>Out for Delivery</p>
+            </div>
+            <div class="step">
+              <ion-icon name="home-outline"></ion-icon>
+              <p>Delivered</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="track-footer">
+          <p>Delivery by: <b>John Doe</b> | Contact: <b>+63 912 345 6789</b></p>
+          <button class="search-btn">View Order Details</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      menuToggle.setAttribute("name", sidebar.classList.contains("active") ? "close-outline" : "menu-outline");
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

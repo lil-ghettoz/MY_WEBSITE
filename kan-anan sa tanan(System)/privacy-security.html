@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy & Security | Kan-Anan sa Tanan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="privacy-container">
+    <h3>Privacy & Security</h3>
+
+    <div class="privacy-group">
+      <h4>Privacy Preferences</h4>
+      <div class="privacy-option">
+        <label>Profile Visibility</label>
+        <input type="checkbox" checked />
+      </div>
+      <div class="privacy-option">
+        <label>Personalized Ads</label>
+        <input type="checkbox" />
+      </div>
+      <div class="privacy-option">
+        <label>Data Sharing with Partners</label>
+        <input type="checkbox" checked />
+      </div>
+    </div>
+
+    <div class="privacy-group">
+      <h4>Security Settings</h4>
+      <div class="privacy-option">
+        <label>Enable Two-Factor Authentication (2FA)</label>
+        <input type="checkbox" id="twofa" />
+      </div>
+      <div class="privacy-option">
+        <label>Change Password</label>
+        <button class="btn" onclick="changePassword()">Change</button>
+      </div>
+      <div class="privacy-option">
+        <label>Export My Data</label>
+        <button class="btn" onclick="exportData()">Export</button>
+      </div>
+      <div class="privacy-option">
+        <label>Delete My Account</label>
+        <button class="btn" style="background:#e04e4e" onclick="deleteAccount()">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function changePassword() {
+      alert("Redirecting to password change form...");
+    }
+    function exportData() {
+      alert("Your data export request has been received.");
+    }
+    function deleteAccount() {
+      if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+        alert("Your account has been deleted.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kan Anan Sa Tanan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="sidebar">
+        <h1 class="logo">Kan Anan Sa Tanan</h1>
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+            <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+            <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+            <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+            <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div> 
+
+        <div class="sidebar-logout">
+        <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>      
+    </div>
+
+    <main class="main">
+      <div class="search-bar">
+        <input type="text" placeholder="Search for food, restaurants..." />
+        <button>Search</button>
+      </div>
+
+      <h2 class="section-title">My Orders</h2>
+
+      <div class="orders-container">
+        <div class="order-card">
+          <img class="highlight-img" src="images/pizza.jpg">
+          <div class="order-details">
+            <h3>Delicious Pizza</h3>
+            <p>Ordered on: Oct 10, 2025</p>
+            <p>Quantity: 3</p>
+            <span class="price">$12.99</span>
+          </div>
+          <div class="order-status delivered">Delivered</div>
+        </div>
+
+        <div class="order-card">
+          <img class="highlight-img" src="images/burger.jpeg">
+          <div class="order-details">
+            <h3>HamBurger</h3>
+            <p>Ordered on: Oct 12, 2025</p>
+            <p>Quantity: 2</p>
+            <span class="price">$5.99</span>
+          </div>
+          <div class="order-status pending">Pending</div>
+        </div>
+
+        <div class="order-card">
+          <img class="highlight-img" src="images/chaofan.png">
+          <div class="order-details">
+            <h3>Chao Fan</h3>
+            <p>Ordered on: Oct 13, 2025</p>
+            <p>Quantity: 5</p>
+            <span class="price">$9.99</span>
+          </div>
+          <div class="order-status cancelled">Cancelled</div>
+        </div>
+      </div>
+    </main>
+
+     
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

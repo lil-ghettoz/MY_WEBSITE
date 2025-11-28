@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kan Anan Sa Tanan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1 class="logo">Kan Anan Sa Tanan</h1>
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+            <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+            <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+            <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+            <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div> 
+
+        <div class="sidebar-logout">
+        <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>      
+    </div>
+
+    <div class="main">
+        <div class="main-navbar">
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <div class="search">
+                <input type="text" placeholder="Search for food, restaurants...">
+                <button class="search-btn">Search</button>
+            </div>
+            <div class="profile">
+                <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+                <a class="user" href="user.html"><ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+        
+        <div class="main-highlight">
+             <div class="main-header">
+                <h2 class="main-title">Recommendations</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+                </div>
+        </div> 
+
+        <div class="highlight-wrapper">
+            <div class="highlight-card">
+                <img class="highlight-img" src="images/pizza.jpg">
+                <div class="highlight-desc">
+                    <h4>Delicious Pizza</h4>
+                    <p>From $10.99</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <img class="highlight-img" src="images/burger.jpeg">
+                <div class="highlight-desc">
+                    <h4>HamBurger</h4>
+                    <p>From $2.99</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <img class="highlight-img" src="images/friedchicken.jpg">
+                <div class="highlight-desc">
+                    <h4>Chicken Joy</h4>
+                    <p>From $9.99</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <img class="highlight-img" src="images/donuts.jpeg">
+                <div class="highlight-desc">
+                    <h4>Donut</h4>
+                    <p>From $1.49</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+     
+    <div class="main-menus">
+        <div class="main-filter"> 
+            <div>
+                <h2 class="main-title">Menu <br>Category</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="filter-wrapper">
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="restaurant-outline"></ion-icon>
+                    </div>
+                    <p>All Menus</p>    
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="fast-food-outline"></ion-icon>
+                    </div>
+                    <p>Burger</p>    
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="pizza-outline"></ion-icon>
+                    </div>
+                    <p>Pizza</p>    
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="ice-cream-outline"></ion-icon>
+                    </div>
+                    <p>Dessert</p>    
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="beer-outline"></ion-icon>
+                    </div>
+                    <p>Drinks</p>    
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="fish-outline"></ion-icon>
+                    </div>
+                    <p>SeaFoods</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="nutrition-outline"></ion-icon>
+                    </div>
+                    <p>Healthy</p>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="cafe-outline"></ion-icon>
+                    </div>
+                    <p>Coffee</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="main-detail">
+            <h2 class="main-title">Choose Restaurants</h2>
+            <div class="detail-wrapper">
+                <div class="detail-card">
+                    <img class="detail-img" src="images/jollibee.jpg">
+                    <div class="detail-name">
+                        <h4>Jollibee</h4>
+                        <p class="detail-sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+                        <p class="detail-rate">4.5 <ion-icon name="star-outline"></ion-icon></p>
+                        <a href="Restaurants-templates/jollibee.html"><button class="search-btn detail-btn">Order Now</button></a>
+                    </div>
+                    <ion-icon class="detail-favorite" name="heart-outline"></ion-icon>
+                </div>
+                <div class="detail-card">
+                    <img class="detail-img" src="images/mang_inasal.jpeg">
+                    <div class="detail-name">
+                        <h4>Mang Inasal</h4>
+                        <p class="detail-sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+                        <p class="detail-rate">4.7 <ion-icon name="star-outline"></ion-icon></p>
+                        <a href="Restaurants-templates/mang_inasal.html"><button class="search-btn detail-btn">Order Now</button></a>
+                    </div>
+                    <ion-icon class="detail-favorite" name="heart-outline"></ion-icon>
+                </div>
+                <div class="detail-card">
+                    <img class="detail-img" src="images/mcdo.jpg">
+                    <div class="detail-name">
+                        <h4>McDonald's</h4>
+                        <p class="detail-sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+                        <p class="detail-rate">4.4 <ion-icon name="star-outline"></ion-icon></p>
+                        <a href="Restaurants-templates/mcdo.html"><button class="search-btn detail-btn">Order Now</button></a>
+                    </div>
+                    <ion-icon class="detail-favorite" name="heart-outline"></ion-icon>
+                </div>
+                <div class="detail-card">
+                    <img class="detail-img" src="images/Chowking.png">
+                    <div class="detail-name">
+                        <h4>Chowking</h4>
+                        <p class="detail-sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+                        <p class="detail-rate">4.2 <ion-icon name="star-outline"></ion-icon></p>
+                        <a href="Restaurants-templates/chowking.html"><button class="search-btn detail-btn">Order Now</button></a>
+                    </div>
+                    <ion-icon class="detail-favorite" name="heart-outline"></ion-icon>
+                </div>
+                <div class="detail-card">
+                    <img class="detail-img" src="images/Dunkin_Donut.png">
+                    <div class="detail-name">
+                        <h4>Dunkin Donut</h4>
+                        <p class="detail-sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+                        <p class="detail-rate">4.3 <ion-icon name="star-outline"></ion-icon></p>
+                        <a href="Restaurants-templates/dunkin.html"><button class="search-btn detail-btn">Order Now</button></a>
+                    </div>
+                    <ion-icon class="detail-favorite" name="heart-outline"></ion-icon>
+                </div>
+                <div class="detail-card">
+                    <img class="detail-img" src="images/greenwich.jpg">
+                    <div class="detail-name">
+                        <h4>Greenwich</h4>
+                        <p class="detail-sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+                        <p class="detail-rate">4.3 <ion-icon name="star-outline"></ion-icon></p>
+                        <a href="Restaurants-templates/greenwich.html"><button class="search-btn detail-btn">Order Now</button></a>
+                    </div>
+                    <ion-icon class="detail-favorite" name="heart-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+
+        if (sidebar.classList.contains("active")) {
+        menuToggle.setAttribute("name", "close-outline");
+        } else {
+        menuToggle.setAttribute("name", "menu-outline");
+        }
+        });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

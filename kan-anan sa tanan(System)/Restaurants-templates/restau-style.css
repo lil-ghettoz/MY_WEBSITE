@@ -1,0 +1,290 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff7ed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h4 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Universal container layout */
+.jolly-container,
+.mang-container,
+.mcdo-container,
+.chow-container,
+.green-container,
+.dunkin-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Title + Description */
+.jolly-title,
+.mang-title,
+.mcdo-title,
+.chow-title,
+.green-title,
+.dunkin-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.jolly-desc,
+.mang-desc,
+.mcdo-desc,
+.chow-desc,
+.green-desc,
+.dunkin-desc {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Menu grid */
+.jolly-menu,
+.mang-menu,
+.mcdo-menu,
+.chow-menu,
+.green-menu,
+.dunkin-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Menu item card */
+.jolly-item,
+.mang-item,
+.mcdo-item,
+.chow-item,
+.green-item,
+.dunkin-item {
+    background: #fff;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.jolly-item img,
+.mang-item img,
+.mcdo-item img,
+.chow-item img,
+.green-item img,
+.dunkin-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Hover animation */
+.jolly-item:hover,
+.mang-item:hover,
+.mcdo-item:hover,
+.chow-item:hover,
+.green-item:hover,
+.dunkin-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Name + Price + Description */
+.jolly-item h4,
+.mang-item h4,
+.mcdo-item h4,
+.chow-item h4,
+.green-item h4,
+.dunkin-item h4 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.jolly-item p,
+.mang-item p,
+.mcdo-item p,
+.chow-item p,
+.green-item p,
+.dunkin-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.jolly-price,
+.mang-price,
+.mcdo-price,
+.chow-price,
+.green-price,
+.dunkin-price {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ===========================
+   RESTAURANT THEMES
+=========================== */
+
+/* Jollibee Theme */
+.jolly-container {
+    border-top: 8px solid #e4002b;
+}
+.jolly-title {
+    color: #e4002b;
+}
+.jolly-price {
+    color: #e4002b;
+}
+
+/* Mang Inasal Theme */
+.mang-container {
+    border-top: 8px solid #228B22;
+}
+.mang-title {
+    color: #228B22;
+}
+.mang-price {
+    color: #228B22;
+}
+
+/* McDonald's Theme */
+.mcdo-container {
+    border-top: 8px solid #ffbc0d;
+}
+.mcdo-title {
+    color: #ffbc0d;
+}
+.mcdo-price {
+    color: #ffbc0d;
+}
+
+/* ===========================
+   NEW RESTAURANT THEMES
+=========================== */
+
+/* Chowking Theme */
+.chow-container {
+    border-top: 8px solid #b03060;
+}
+.chow-title {
+    color: #b03060;
+}
+.chow-price {
+    color: #b03060;
+}
+
+/* Greenwich Theme */
+.green-container {
+    border-top: 8px solid #008b45;
+}
+.green-title {
+    color: #008b45;
+}
+.green-price {
+    color: #008b45;
+}
+
+/* Dunkin’ Donuts Theme */
+.dunkin-container {
+    border-top: 8px solid #ff7f50;
+}
+.dunkin-title {
+    color: #ff7f50;
+}
+.dunkin-price {
+    color: #ff7f50;
+}
+
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 768px) {
+    .jolly-container,
+    .mang-container,
+    .mcdo-container,
+    .chow-container,
+    .green-container,
+    .dunkin-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .jolly-title,
+    .mang-title,
+    .mcdo-title,
+    .chow-title,
+    .green-title,
+    .dunkin-title {
+        font-size: 1.6rem;
+    }
+}
+/* ===========================
+   BACK TO HOME BUTTON
+=========================== */
+.back-home {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #ccc;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.back-home:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Color themes for each restaurant */
+.jolly-back {
+    background-color: #e4002b;
+}
+
+.mang-back {
+    background-color: #228B22;
+}
+
+.mcdo-back {
+    background-color: #ffbc0d;
+    color: #000;
+}
+
+.chow-back {
+    background-color: #b03060;
+}
+
+.green-back {
+    background-color: #008b45;
+}
+
+.dunkin-back {
+    background-color: #ff7f50;
+}

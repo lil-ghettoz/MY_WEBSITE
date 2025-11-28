@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+  <title>Payment - Kan Anan Sa Tanan</title>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h1 class="logo">Kan Anan Sa Tanan</h1>
+    <div class="sidebar-menus">
+      <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+      <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+      <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+      <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+      <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+      <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+      <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+      <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+    </div> 
+
+    <div class="sidebar-logout">
+      <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+    </div>      
+  </div>
+
+  <div class="main">
+    <div class="main-navbar">
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <div class="search">
+        <input type="text" placeholder="Search for food, restaurants...">
+        <button class="search-btn">Search</button>
+      </div>
+      <div class="profile">
+        <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+        <a class="user" href="user.html"><ion-icon name="person-outline"></ion-icon></a>
+      </div>
+    </div>
+    
+    <div class="main-highlight">
+      <div class="main-header">
+        <h2 class="main-title">Payment Form</h2>
+      </div>
+
+      <div class="payment-wrapper">
+        <form class="payment-form" action="process_payment.php" method="POST">
+          
+          <h3>Billing Information</h3>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Billing Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+          </div>
+
+          <h3>Payment Details</h3>
+          <div class="form-group">
+            <label for="paymentMethod">Select Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="">-- Select Payment Method --</option>
+              <option value="gcash">GCash</option>
+              <option value="card">Credit/Debit Card</option>
+              <option value="cash">Cash on Delivery</option>
+            </select>
+          </div>
+
+          <!-- GCash Fields -->
+          <div class="payment-section" id="gcash-section" style="display:none;">
+            <div class="form-group">
+              <label for="gcashNumber">GCash Number</label>
+              <input type="text" id="gcashNumber" name="gcashNumber" placeholder="09XXXXXXXXX">
+            </div>
+            <div class="form-group">
+              <label for="gcashRef">Reference Number (optional)</label>
+              <input type="text" id="gcashRef" name="gcashRef" placeholder="Enter GCash Reference No.">
+            </div>
+          </div>
+
+          <!-- Card Fields -->
+          <div class="payment-section" id="card-section" style="display:none;">
+            <div class="form-group">
+              <label for="cardname">Cardholder Name</label>
+              <input type="text" id="cardname" name="cardname" placeholder="Name on card">
+            </div>
+
+            <div class="form-group">
+              <label for="cardnumber">Card Number</label>
+              <input type="text" id="cardnumber" name="cardnumber" maxlength="16" placeholder="XXXX XXXX XXXX XXXX">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expdate">Expiry Date</label>
+                <input type="month" id="expdate" name="expdate">
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123">
+              </div>
+            </div>
+          </div>
+
+          <!-- Cash On Delivery Info -->
+          <div class="payment-section" id="cash-section" style="display:none;">
+            <p><strong>Note:</strong> You will pay the total amount directly to the delivery person upon receiving your order.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount to Pay</label>
+            <input type="text" id="amount" name="amount" value="$29.99" readonly>
+          </div>
+
+          <button type="submit" class="search-btn pay-btn">Confirm Payment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+    const paymentSelect = document.getElementById('paymentMethod');
+
+    // Toggle sidebar
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      menuToggle.setAttribute("name", sidebar.classList.contains("active") ? "close-outline" : "menu-outline");
+    });
+
+    // Payment method logic
+    paymentSelect.addEventListener('change', function() {
+      document.querySelectorAll('.payment-section').forEach(section => section.style.display = 'none');
+      if (this.value === 'gcash') document.getElementById('gcash-section').style.display = 'block';
+      if (this.value === 'card') document.getElementById('card-section').style.display = 'block';
+      if (this.value === 'cash') document.getElementById('cash-section').style.display = 'block';
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

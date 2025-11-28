@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+    <title>Cart - Kan Anan Sa Tanan</title>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h1 class="logo">Kan Anan Sa Tanan</h1>
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+            <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+            <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+            <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+            <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div> 
+
+        <div class="sidebar-logout">
+        <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>      
+    </div>
+
+         
+    <div class="main">
+        <div class="main-navbar">
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <div class="search">
+                <input type="text" placeholder="Search for food, restaurants...">
+                <button class="search-btn">Search</button>
+            </div>
+            <div class="profile">
+                <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+                <a class="user" href="user.html"><ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+        
+        <div class="main-highlight">
+             <div class="main-header">
+                <h2 class="main-title">Your Cart</h2>
+            </div>
+
+            <div class="cart-wrapper">
+                <div class="cart-list">
+                    <!-- cart item -->
+                    <div class="cart-item" data-price="10.99">
+                        <img src="images/pizza.jpg" alt="Pizza" class="cart-thumb">
+                        <div class="cart-item-info">
+                            <h4>Delicious Pizza</h4>
+                            <p class="cart-item-price">$10.99</p>
+                            <div class="qty-controls">
+                                <button class="qty-decrease">-</button>
+                                <input class="qty-input" type="number" value="1" min="1">
+                                <button class="qty-increase">+</button>
+                            </div>
+                        </div>
+                        <p class="cart-item-subtotal">$10.99</p>
+                    </div>
+
+                    <div class="cart-item" data-price="2.99">
+                        <img src="images/burger.jpeg" alt="Burger" class="cart-thumb">
+                        <div class="cart-item-info">
+                            <h4>HamBurger</h4>
+                            <p class="cart-item-price">$2.99</p>
+                            <div class="qty-controls">
+                                <button class="qty-decrease">-</button>
+                                <input class="qty-input" type="number" value="2" min="1">
+                                <button class="qty-increase">+</button>
+                            </div>
+                        </div>
+                        <p class="cart-item-subtotal">$5.98</p>
+                    </div>
+
+                    <div class="cart-item" data-price="1.49">
+                        <img src="images/chaofan.png" alt="chaofan" class="cart-thumb">
+                        <div class="cart-item-info">
+                            <h4>Chao Fan</h4>
+                            <p class="cart-item-price">$1.49</p>
+                            <div class="qty-controls">
+                                <button class="qty-decrease">-</button>
+                                <input class="qty-input" type="number" value="3" min="1">
+                                <button class="qty-increase">+</button>
+                            </div>
+                        </div>
+                        <p class="cart-item-subtotal">$4.47</p>
+                    </div>
+
+                </div>
+
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-line"><span>Items total</span><span id="items-total">$21.44</span></div>
+                    <div class="summary-line"><span>Delivery</span><span id="delivery-fee">$2.50</span></div>
+                    <hr>
+                    <div class="summary-line total"><span>Total</span><span id="order-total">$23.94</span></div>
+                    <button id="checkout-btn" class="search-btn">Proceed to Payment</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                menuToggle.setAttribute("name", "close-outline");
+            } else {
+                menuToggle.setAttribute("name", "menu-outline");
+            }
+        });
+
+        // Cart quantity and totals
+        function toCurrency(n){
+            return '$' + Number(n).toFixed(2);
+        }
+
+        function recalcTotals(){
+            const items = document.querySelectorAll('.cart-item');
+            let itemsTotal = 0;
+            items.forEach(item => {
+                const price = parseFloat(item.dataset.price);
+                const qty = Number(item.querySelector('.qty-input').value) || 0;
+                const subtotal = price * qty;
+                item.querySelector('.cart-item-subtotal').textContent = toCurrency(subtotal);
+                itemsTotal += subtotal;
+            });
+            const delivery = 2.50;
+            document.getElementById('items-total').textContent = toCurrency(itemsTotal);
+            document.getElementById('delivery-fee').textContent = toCurrency(delivery);
+            document.getElementById('order-total').textContent = toCurrency(itemsTotal + delivery);
+        }
+
+        document.querySelectorAll('.qty-increase').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const input = e.target.parentElement.querySelector('.qty-input');
+                input.value = Number(input.value) + 1;
+                recalcTotals();
+            });
+        });
+
+        document.querySelectorAll('.qty-decrease').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const input = e.target.parentElement.querySelector('.qty-input');
+                input.value = Math.max(1, Number(input.value) - 1);
+                recalcTotals();
+            });
+        });
+
+        document.querySelectorAll('.qty-input').forEach(input => {
+            input.addEventListener('change', () => {
+                if (Number(input.value) < 1 || isNaN(Number(input.value))) input.value = 1;
+                recalcTotals();
+            });
+        });
+
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            // simple navigation to payments page
+            window.location.href = 'payments.html';
+        });
+
+        // initial calculation
+        recalcTotals();
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

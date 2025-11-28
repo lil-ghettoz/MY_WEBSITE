@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Kan Anan Sa Tanan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth@75..100&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="sidebar">
+        <h1 class="logo">Kan Anan Sa Tanan</h1>
+        <div class="sidebar-menus">
+            <a href="home.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="myorders.html"><ion-icon name="receipt-outline"></ion-icon>My Orders</a>
+            <a href="TrackOrder.html"><ion-icon name="compass-outline"></ion-icon>Track Order</a>
+            <a href="Transaction.html"><ion-icon name="card-outline"></ion-icon>Transactions</a>
+            <a href="Reviews.html"><ion-icon name="star-outline"></ion-icon>Reviews</a>
+            <a href="Notification.html"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="Contacts.html"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="Settings.html"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div> 
+
+        <div class="sidebar-logout">
+        <a href="logout.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>      
+    </div>
+
+  <div class="main">
+    <div class="main-navbar">
+      <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+      <div class="search">
+        <input type="text" placeholder="Search for settings...">
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+
+    <div class="main-menus">
+      <h2 class="main-title">Settings</h2>
+      <hr class="divider">
+
+      <div class="settings-wrapper">
+        <div class="settings-card">
+          <h3>Account Settings</h3>
+          <p>Manage your personal details, email, and password.</p>
+          <a href="user.html"><button class="search-btn">Edit Account</button></a>
+        </div>
+
+        <div class="settings-card">
+          <h3>App Preferences</h3>
+          <p>Change theme, language, or notification settings.</p>
+          <a href="app-preferences.html"><button class="search-btn">Open Preferences</button></a>
+        </div>
+
+        <div class="settings-card">
+          <h3>Privacy & Security</h3>
+          <p>Update your privacy preferences and secure your account.</p>
+          <a href="privacy-security.html"><button class="search-btn">Manage Privacy</button></a>
+        </div>
+
+        <div class="settings-card">
+          <h3>Help & Support</h3>
+          <p>Need assistance? Reach out to our support team.</p>
+          <a href="Contacts.html"><button class="search-btn">Contact Support</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      menuToggle.setAttribute("name", sidebar.classList.contains("active") ? "close-outline" : "menu-outline");
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

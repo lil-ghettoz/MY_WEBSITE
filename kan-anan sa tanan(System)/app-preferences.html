@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Preferences | Kan-Anan sa Tanan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="preferences-container">
+    <h3>App Preferences</h3>
+
+    <div class="pref-group">
+      <h4>Theme</h4>
+      <div class="pref-option">
+        <label>Dark Mode</label>
+        <input type="checkbox" id="themeToggle" />
+      </div>
+    </div>
+
+    <div class="pref-group">
+      <h4>Language</h4>
+      <div class="pref-option">
+        <label for="language">Choose Language</label>
+        <select id="language">
+          <option selected>English</option>
+          <option>Japanese</option>
+          <option>Chinese</option>
+          <option>Filipino</option>
+          <option>Cebuano</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="pref-group">
+      <h4>Notifications</h4>
+      <div class="pref-option">
+        <label>Email Notifications</label>
+        <input type="checkbox" checked />
+      </div>
+      <div class="pref-option">
+        <label>SMS Notifications</label>
+        <input type="checkbox" />
+      </div>
+      <div class="pref-option">
+        <label>App Push Notifications</label>
+        <input type="checkbox" checked />
+      </div>
+    </div>
+
+    <button class="save-btn" onclick="savePreferences()">Save Preferences</button>
+  </div>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("change", () => {
+      const theme = themeToggle.checked ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    });
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme") || "light"
+    );
+
+    // Save preferences
+    function savePreferences() {
+      alert("Preferences have been saved successfully!");
+    }
+  </script>
+</body>
+</html>

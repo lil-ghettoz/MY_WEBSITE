@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile | Kan-Anan sa Tanan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="Outer-box">
+    <div class="profile-container">
+      <!-- Sidebar -->
+      <div class="user-sidebar">
+        <div class="cover">
+          <div class="avatar">
+            <img src="images/userprofile.webp" alt="User Avatar">
+          </div>
+        </div>
+
+        <h2>Juan Dela Cruz</h2>
+        <p>Customer — Kan-Anan sa Tanan</p>
+
+        <div class="stats">
+          <div class="stat"><h3>25</h3><p>Orders</p></div>
+          <div class="stat"><h3>3</h3><p>Favorites</p></div>
+          <div class="stat"><h3>5⭐</h3><p>Rating</p></div>
+        </div>
+
+        <button class="btn" onclick="editProfile()">Edit Profile</button>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main">
+        <div class="section">
+          <h3>Personal Information</h3>
+          <div class="info">
+            <div>
+              <label>Full Name</label>
+              <input type="text" id="name" value="Juan Dela Cruz">
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" id="email" value="juan@example.com">
+            </div>
+            <div>
+              <label>Contact Number</label>
+              <input type="text" id="phone" value="09123456789">
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Delivery Address</h3>
+          <div class="info">
+            <div style="grid-column:1/-1;">
+              <label>Address</label>
+              <textarea id="address" rows="3">123 West Side, Butuan City</textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Account Settings</h3>
+          <div class="info">
+            <div>
+              <label>Username</label>
+              <input type="text" id="username" value="juandc">
+            </div>
+            <div>
+              <label>Password</label>
+              <input type="password" id="password" value="password123">
+            </div>
+          </div>
+        </div>
+
+        <button class="save-btn" onclick="saveChanges()">Save Changes</button>
+        <a href="home.html" class="home user-back">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function editProfile() {
+      alert("Edit mode activated — You can now modify your details.");
+    }
+
+    function saveChanges() {
+      const name = document.getElementById("name").value;
+      alert("Profile for " + name + " has been updated successfully!");
+    }
+  </script>
+</body>
+</html>
